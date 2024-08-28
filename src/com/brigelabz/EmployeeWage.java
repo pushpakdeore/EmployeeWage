@@ -8,42 +8,36 @@ public class EmployeeWage{
         int empHrs;
         int totalEmpHrs = 0;
         int totalEmpWage=0;
-        int totalWorkingDays=0;
         int wagePerHrs=20;
-        int numOfWorkingDays=20;
-        int numOfWorkingHrs=160;
 
-        while (totalEmpHrs <= numOfWorkingHrs && totalWorkingDays <= numOfWorkingDays) {
-            Random random = new Random();
-            // Generate a random 0 ,1 or 2
-            int empCheck = random.nextInt(3);
+        Random random = new Random();
+        // Generate a random 0 ,1 or 2
+        int empCheck = random.nextInt(3);
 
-            switch ((int) empCheck) {
-                case IS_PART_TIME:
-                    System.out.println("Employee is Present as PART TIME");
-                    empHrs = 4;
-                    totalEmpHrs += empHrs;
-                    totalEmpWage+=empHrs*wagePerHrs;
-                    System.out.println("Total Wage :"+totalEmpWage);
-                    break;
-                case IS_FULL_TIME:
-                    System.out.println("Employee is Present as FULL TIME");
-                    empHrs = 8;
-                    totalEmpHrs += empHrs;
-                    totalEmpWage+=empHrs*wagePerHrs;
-                    System.out.println("Total Wage :"+totalEmpWage);
-                    break;
-                default:
-                    System.out.println("Employee is Absent");
-                    empHrs = 0;
-                    totalEmpHrs += empHrs;
-                    totalEmpWage+=empHrs*wagePerHrs;
-                    System.out.println("Total Wage :"+totalEmpWage);
-                    break;
-            }
-            totalWorkingDays++;
-            System.out.println("Day No :" + totalWorkingDays + " Emp Hrs: " + empHrs);
+        switch ((int) empCheck) {
+            case IS_PART_TIME:
+                System.out.println("Employee is Present as PART TIME");
+                empHrs = 4;
+                totalEmpHrs += empHrs;
+                totalEmpWage+=empHrs*wagePerHrs;
+                System.out.println("Total Wage :"+totalEmpWage);
+                break;
+            case IS_FULL_TIME:
+                System.out.println("Employee is Present as FULL TIME");
+                empHrs = 8;
+                totalEmpHrs += empHrs;
+                totalEmpWage+=empHrs*wagePerHrs;
+                System.out.println("Total Wage :"+totalEmpWage);
+                break;
+            default:
+                System.out.println("Employee is Absent");
+                empHrs = 0;
+                totalEmpHrs += empHrs;
+                totalEmpWage+=empHrs*wagePerHrs;
+                System.out.println("Total Wage :"+totalEmpWage);
+                break;
         }
+
         totalEmpWage = totalEmpHrs * wagePerHrs;
         System.out.println("Total Working Hrs for  :"+totalEmpHrs);
     }
